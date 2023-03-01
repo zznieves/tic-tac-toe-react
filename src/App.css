@@ -24,16 +24,16 @@ div#gameBoard {
     display: grid;
 
     /* 3 columns in grid */
-    grid-template-columns: auto auto auto;
-
+    grid-template: repeat(3, 175px) / repeat(3, 175px);
+    justify-content: center;
 
     /* dimensions */
-    width: 550px;
+    width: 600px;
     height: 500px;
 
     /* center on page */
     margin: 50px auto;
-    text-align: center;
+    text-align:center;
 }
 
 /* GamePiece component */
@@ -41,6 +41,12 @@ div#gameBoard {
 
     border: 3px solid black;
     
+}
+
+/* center gamePiece text both horizontally and vertically*/
+.gamePiece > h2 {
+
+    padding: 25%;
 }
 
 
@@ -73,11 +79,6 @@ div#gameBoard {
 
 
 
-/* GamePiece text */
-.gamePiece > p {
-
-    padding: 25%;
-}
 
 .gamePiece:hover {
 

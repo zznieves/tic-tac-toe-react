@@ -17,12 +17,12 @@ class GamePiece extends React.Component {
     render() {
 
         // destructure props
-        const { id, className, value } = this.props;
+        const { id, className, onClick } = this.props;
 
         // return HTML(JSX)
         return (
-            <div id={id} className={className}>
-                <p>{value}</p>
+            <div id={id} className={className} onClick={() => {onClick(id, className)}}>
+                <h2></h2>
             </div>
         );
     }

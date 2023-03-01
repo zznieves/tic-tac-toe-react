@@ -8,7 +8,7 @@ class GameBoard extends React.Component {
     render() {
 
         // destructure props
-        const { id } = this.props;
+        const { id, onClick } = this.props;
 
         // gamePiece numbers
         const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -18,7 +18,10 @@ class GameBoard extends React.Component {
             <div id={id}>
                 {numbers.map((number, index) => {
                     
-                    return <GamePiece key={index} id={`gamePiece${number}`} className='gamePiece' value={number} />;
+                    return <GamePiece key={index} 
+                                id={`gamePiece${number}`} 
+                                className='gamePiece' 
+                                onClick={onClick} />;
                 })}
             </div>
         );
