@@ -1,18 +1,18 @@
 import React from 'react';
 
 // functional component: arrow-function syntax
-const Header = props => {
+function Score(props) {
 
     // destructure props
-    const { id, title } = props;
+    const { title, score, id } = props;
 
     // return HTML(JSX)
     return (
         <div id={id}>
-            <h1>{title}</h1>
+            <h4>{title}</h4>
+            <p>{score}</p>
         </div>
     );
-};
+}
 
-// export to be used in another file
-export default Header;
+export default Score;
