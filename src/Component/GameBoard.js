@@ -18,7 +18,7 @@ class GameBoard extends React.Component {
             <div id={id}>
                 {numbers.map((number, index) => {
                     
-                    return <GamePiece key={index} id={`gamePiece${number}`} value={number} />;
+                    return <GamePiece key={index} id={`gamePiece${number}`} className='gamePiece' value={number} />;
                 })}
             </div>
         );

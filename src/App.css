@@ -1,0 +1,110 @@
+/* CSS ruleset for App component and children */
+
+/* change the box model */
+* {
+
+    box-sizing: border-box;
+}
+
+
+/* Header component */
+div#header {
+
+    text-align: center;
+    border-bottom: 3px solid black;
+
+}
+
+
+
+/* GameBoard component */
+div#gameBoard {
+
+    /* turn the GameBoard Component into a block-level grid container */
+    display: grid;
+
+    /* 3 columns in grid */
+    grid-template-columns: auto auto auto;
+
+
+    /* dimensions */
+    width: 550px;
+    height: 500px;
+
+    /* center on page */
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* GamePiece component */
+.gamePiece {
+
+    border: 3px solid black;
+    
+}
+
+
+
+/* remove border lines from gamepieces for appearance */
+
+/* remove left border line */
+#gamePiece1, #gamePiece4, #gamePiece7 {
+
+    border-left: none;
+}
+
+/* remove top border line */
+#gamePiece1, #gamePiece2, #gamePiece3 {
+
+    border-top: none;
+}
+
+/* remove right border line */
+#gamePiece3, #gamePiece6, #gamePiece9 {
+
+    border-right: none;
+}
+
+/* remove bottom border line */
+#gamePiece7, #gamePiece8, #gamePiece9 {
+
+    border-bottom: none;
+}
+
+
+
+/* GamePiece text */
+.gamePiece > p {
+
+    padding: 25%;
+}
+
+.gamePiece:hover {
+
+    background-color: gold;
+}
+
+
+
+
+/* ScoreBoard component */
+#scoreBoard {
+
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    text-align: center;
+}
+
+
+
+/* Score component */
+.score {
+
+    border: 3px solid black;
+
+}

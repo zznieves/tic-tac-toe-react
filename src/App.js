@@ -22,7 +22,7 @@ class App extends React.Component {
 
     // return HTML(JSX)
     return (
-      <div>
+      <div id='web-app'>
         <Header id='header' title='Tic-Tac-Toe' />
         <GameBoard id='gameBoard' />
         <ScoreBoard id='scoreBoard' />

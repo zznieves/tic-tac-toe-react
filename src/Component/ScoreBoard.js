@@ -33,6 +33,7 @@ class ScoreBoard extends React.Component {
 
                     return <Score key={index}
                         id={key}
+                        className='score'
                         title={key} 
                         score={this.state[key]} />;
                 })}
