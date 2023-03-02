@@ -22,7 +22,7 @@ class GamePiece extends React.Component {
         // return HTML(JSX)
         return (
             <div id={id} className={className} onClick={() => {onClick(id, className)}}>
-                <h2></h2>
+                <p></p>
             </div>
         );
     }
