@@ -50,8 +50,8 @@ class App extends React.Component {
           // returns an Array with results
         const gameState = evaluateGameState(className, this.state.playerTurn);
 
-        // if we have a winner or tie, display appropriate message
         // call setState method to update the state
+        // if we have a tie
         if(gameState.length === 1) {
           alert("It's a tie!");
 
@@ -59,8 +59,16 @@ class App extends React.Component {
             return {Ties: prevState.Ties+1}
           });
 
-          // clear the gameBoard
+          // for loop on GameBoard pieces: clear the gameBoard for next game session
+          let gamePieces = document.querySelectorAll(`.${className}`);
+
+          for(let i = 0; i < gamePieces.length; i++) {
+
+            gamePieces[i].innerHTML = '<h2></h2>';
+          }
+
         }
+        // if we have a winner
         else if(gameState.length === 2){
 
           alert(`Congratulations Player-${gameState[1]}!
@@ -75,7 +83,15 @@ class App extends React.Component {
             return {[key]: value}
           });
 
-          // clear the gameBoard
+          // for loop on GameBoard pieces: clear the gameBoard for next game session
+          let gamePieces = document.querySelectorAll(`.${className}`);
+
+          for(let i = 0; i < gamePieces.length; i++) {
+
+            gamePieces[i].innerHTML = '<h2></h2>';
+          }
+
+          
         }
       });
 
