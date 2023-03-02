@@ -47,7 +47,36 @@ class App extends React.Component {
         return {playerTurn: prevState.playerTurn+1};
       }, // place code here if using data from udated state
         () => {
+          // returns an Array with results
         const gameState = evaluateGameState(className, this.state.playerTurn);
+
+        // if we have a winner or tie, display appropriate message
+        // call setState method to update the state
+        if(gameState.length === 1) {
+          alert("It's a tie!");
+
+          this.setState((prevState) => {
+            return {Ties: prevState.Ties+1}
+          });
+
+          // clear the gameBoard
+        }
+        else if(gameState.length === 2){
+
+          alert(`Congratulations Player-${gameState[1]}!
+          You Win!`);
+
+          let key = 'Player-' + gameState[1];
+
+          this.setState((prevState) => {
+            // increment score based on previous score
+            let value = prevState[key]+1;
+
+            return {[key]: value}
+          });
+
+          // clear the gameBoard
+        }
       });
 
     }

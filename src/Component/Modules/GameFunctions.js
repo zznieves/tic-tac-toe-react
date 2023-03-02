@@ -4,9 +4,6 @@
 
 function isPieceTaken(gamePiece, playerTurn) {
 
-    // test code: log player's turn
-    console.log(playerTurn);
-
     // if the gamePiece is not empty, notify the player
     if(gamePiece.innerText) {
         alert('GamePiece is already taken. Try again');
@@ -48,50 +45,51 @@ function winnerOrTie(values, playerTurn) {
     // Option #1: check indexes 0, 1, and 2
     if((values[0]) && (values[0] === values[1]) && (values[1] === values[2])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
+        
     }
     // Option #2: check indexes 3, 4, and 5
     else if((values[3]) && (values[3] === values[4]) && (values[4] === values[5])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #3: check indexes 6, 7, and 8
     else if((values[6]) && (values[6] === values[7]) && (values[7] === values[8])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #4: check indexes 0, 3, and 6
     else if((values[0]) && (values[0] === values[3]) && (values[3] === values[6])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #5: check indexes 1, 4, and 7
     else if((values[1]) && (values[1] === values[4]) && (values[4] === values[7])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #6: check indexes 2, 5, and 8
     else if((values[2]) && (values[2] === values[5]) && (values[5] === values[8])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #7: check indexes 0, 4, 8
     else if((values[0]) && (values[0] === values[4]) && (values[4] === values[8])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     // Option #8: check indexes 2, 4, 6
     else if((values[2]) && (values[2] === values[4]) && (values[4] === values[6])) {
 
-        // test code: log to the console
-        console.log('We have a winner!');
+        // we have a winner. Return true with the players' info
+        return [true, ((playerTurn%2===0) ? (1) : (2))];
     }
     /**
      * if we've gotten to this point, check if the Array is full
@@ -100,7 +98,11 @@ function winnerOrTie(values, playerTurn) {
      */
     else if( !values.includes('')) {
 
-        console.log("It's a tie!");
+        return ['tie'];
+    }
+    // if we don't have a result yet, return false
+    else {
+        return false;
     }
 }
 
@@ -113,13 +115,12 @@ function evaluateGameState(className, playerTurn) {
 
     // get current GamePiece values (empty, X, or O)
     const gameBoardValues = getGameBoardValues(className);
-
-    // test code: log current values to console
-    console.log(gameBoardValues);
     
     // check if we have a winner to a tie
     let a = winnerOrTie(gameBoardValues, playerTurn);
 
+    // return the result to the App.js file
+    return a;
 
 }
 
